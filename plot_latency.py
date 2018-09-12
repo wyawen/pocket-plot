@@ -18,19 +18,19 @@ put_s3 = 25819
 get_s3 = 12102
 put_redis = 232
 get_redis = 230
-put_pocket_dram = 508
-get_pocket_dram = 414 #TODO: update with getBuffer
-put_pocket_nvme = 572   
-get_pocket_nvme = 466 #TODO: update with getBuffer
+put_pocket_dram = 437
+get_pocket_dram = 317 
+put_pocket_nvme = 539 #525   
+get_pocket_nvme = 422 #389 
 
-get_pocket_ssd = 912
-put_pocket_ssd = 762
+get_pocket_ssd = 516 #912 
+put_pocket_ssd = 604 #762 
 
 get_pocket_hdd = 1975
-put_pocket_hdd = 875
+put_pocket_hdd = 712 #629
 
-put_pocket_metadata = 186
-get_pocket_metadata = 183
+put_pocket_metadata = 145 #186
+get_pocket_metadata = 145 #183
 
 puts = (put_s3, put_redis, put_pocket_dram, put_pocket_nvme, put_pocket_ssd, put_pocket_hdd)
 gets = (get_s3, get_redis, get_pocket_dram, get_pocket_nvme, get_pocket_ssd, get_pocket_hdd)
@@ -70,7 +70,7 @@ ax.set_ylabel('Latency (us)')
 #ax.set_title('Unloaded latency for 1KB requests')
 ax2.set_xticks(ind + width / 2)
 ax.set_xticklabels(('S3', 'Redis', 'Pocket\nDRAM', 'Pocket\nNVMe', 'Pocket\nSSD', 'Pocket\nHDD'))
-ax.legend((rects1[0], rects2[0]), ('PUT', 'GET'))
+ax.legend((rects1[0], rects2[0], rects2[2]), ('PUT', 'GET', 'Metadata RPC'))
 
 def autolabel(rects, c):
     """
@@ -89,8 +89,8 @@ def autolabel(rects, c):
 
 autolabel(rects1,'black')
 autolabel(rects2,'black')
-autolabel(rects3,'w')
-autolabel(rects4,'w')
+#autolabel(rects3,'w')
+#autolabel(rects4,'w')
 
 plt.tight_layout()
 plt.savefig("plots/unloaded-latency.pdf")
