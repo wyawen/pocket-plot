@@ -98,13 +98,15 @@ p2_2 = ax.bar(ind_2, reflex_3, width, color=c_b, hatch='/', bottom=reflex_bottom
 #ax.set_title('100GB Sort')
 ax.set_ylabel('Average Time per Lambda (s)')
 ax.set_xticks(ind + width / 2)
-ax.set_xticklabels(('           S3      Redis  Pocket-Flash \n250 Workers', '                      Redis   Pocket-Flash \n500 Workers', '                   Redis  Pocket-Flash \n1000 Workers'), fontsize=20)
+ax.set_xticklabels(('           S3      Redis  Pocket-NVMe \n250 Workers', 
+					'                      Redis   Pocket-NVMe \n500 Workers',
+					'                   Redis  Pocket-Flash \n1000 Workers'), fontsize=20)
 #ax.set_xticklabels(('           S3      Redis  Crail-ReFlex \n250 lambdas', '                      Redis   Crail-ReFlex \n500 lambdas', '                      Redis   Crail-ReFlex \n1000 lambdas'), fontsize=20)
 #ax.set_xlabel('# of Lambdas Workers')
-ax.legend((p1[0], p1_1[0], p1_2[0]), ('S3 I/O','Compute','Shuffle Data I/O'),fontsize=24)
+ax.legend((p1[0], p1_1[0], p1_2[0]), ('S3 I/O','Compute','Ephemeral Data I/O'),fontsize=24)
 #ax.legend((p1[0], p1_1[0], p0_2[0], p1_2[0], p2_2[0], p3_2[0]), ('Input/Ouput','Compute','S3 R/W','Redis R/W 8x25Gbps', 'Redis R/W 4x10Gbps', 'Redis R/W 4x25Gbps'))
 plt.show()
 
 #for tick in ax.get_xticklabels():
 #    tick.set_rotation(45)
-fig.savefig("plots/sort-barplot-execution-time-platform-retreat.png")
+fig.savefig("plots/sort-barplot-execution-time.pdf")
