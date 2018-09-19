@@ -98,9 +98,9 @@ p2_2 = ax.bar(ind_2, reflex_3, width, color=c_b, hatch='/', bottom=reflex_bottom
 #ax.set_title('100GB Sort')
 ax.set_ylabel('Average Time per Lambda (s)')
 ax.set_xticks(ind + width / 2)
-ax.set_xticklabels(('           S3      Redis  Pocket-NVMe \n250 Workers', 
-					'                      Redis   Pocket-NVMe \n500 Workers',
-					'                   Redis  Pocket-Flash \n1000 Workers'), fontsize=20)
+ax.set_xticklabels(('           S3      Redis  Pocket-NVMe \n250 lambdas', 
+					'                      Redis   Pocket-NVMe \n500 lambdas',
+					'                   Redis  Pocket-NVMe \n1000 lambdas'), fontsize=20)
 #ax.set_xticklabels(('           S3      Redis  Crail-ReFlex \n250 lambdas', '                      Redis   Crail-ReFlex \n500 lambdas', '                      Redis   Crail-ReFlex \n1000 lambdas'), fontsize=20)
 #ax.set_xlabel('# of Lambdas Workers')
 ax.legend((p1[0], p1_1[0], p1_2[0]), ('S3 I/O','Compute','Ephemeral Data I/O'),fontsize=24)
