@@ -7,6 +7,8 @@ import pandas as pd
 import matplotlib.ticker as ticker
 
 plt.rcParams.update({'font.size': 32})
+plt.rcParams.update({'pdf.fonttype': 42})
+plt.rcParams.update({'ps.fonttype': 42})
 fig, ax = plt.subplots(figsize=(15, 8))
 
 N = 3 

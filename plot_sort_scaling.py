@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 plt.rcParams.update({'font.size': 24})
+plt.rcParams.update({'pdf.fonttype': 42})
+plt.rcParams.update({'ps.fonttype': 42})
 fig, ax = plt.subplots(figsize=(20, 7))
 
 N = 3 # number of groups on x-axis

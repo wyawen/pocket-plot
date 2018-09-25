@@ -6,6 +6,8 @@ from matplotlib.text import OffsetFrom
 
 #time net_usedMbps avg_cpu dram_usedGB net_allocMbps dram_allocGB
 plt.rcParams.update({'font.size': 30})
+plt.rcParams.update({'pdf.fonttype': 42})
+plt.rcParams.update({'ps.fonttype': 42})
 
 def plot_throughput_scaling():
  
